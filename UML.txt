@@ -1,0 +1,35 @@
+      На UML-диаграмме будут следующие отношения:
+
+Наследование: Car, Airplane, Ship, Bicycle наследуют Transport.
+Реализация интерфейса: Car, Airplane, Ship реализуют интерфейс Engine.
+Ассоциации: классы FuelType и EngineType ассоциируются с конкретными видами транспорта (например, Car может иметь FuelType и EngineType).
+
+
+       +-------------------+
+       |     Transport     |
+       +-------------------+
+       | - name: String     |
+       | - brand: String    |
+       +-------------------+
+       | + start(): void    |
+       | + stop(): void     |
+       | + displayInfo(): void |
+       +-------------------+
+                ^
+                |
+       +-------------------+
+       |     Engine        |
+       +-------------------+
+       | + startEngine(): void |
+       | + stopEngine(): void  |
+       +-------------------+
+        ^         ^        ^
+        |         |        |
++--------+  +---------+  +-------+
+|   Car  |  | Airplane|  |  Ship |
++--------+  +---------+  +-------+
+       |         |         |
++-------------+   +--------+  +----------+
+|  FuelType   |   | Engine |  | Engine   |
+| (Petrol, Electric) | | (Internal, Electric) | |
++-------------+   +--------+  +----------+
